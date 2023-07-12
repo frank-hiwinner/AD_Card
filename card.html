@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Title Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--[if lt IE 9]>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+     <![endif]-->
+  <style>
+    .ROLLBOX {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      width: 100%;
+      height: 700px;
+      margin: auto;
+      border: 1px solid #CCC;
+      background: url('https://picsum.photos/1920/500?random=1');
+      padding-top: 6%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .ROLLBOX:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      left: 0;
+      top: 0;
+    }
+
+    .CARDTITLE {
+      position: absolute;
+      color: #FFF;
+      font-size: 120px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+
+    .ROLL {
+      display: flex;
+      /* width: 2400px; */
+      position: absolute;
+      left: 0;
+      animation: rollCARD 35s linear infinite;
+      animation-direction: reverse;
+      /*反向跑的方向設定 */
+      opacity: 1;
+      padding-left: 100%;
+
+    }
+
+    .CARDWRAP {
+      display: flex;
+      width: 300px;
+      margin: 15px;
+    }
+
+
+    .CARD {
+      width: 300px;
+      height: 450px;
+      background: #e1e1e1;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      transition: all .5s;
+    }
+
+    .CARD h2 {
+      position: absolute;
+      color: #e1e1e1;
+      padding: 15px;
+      transition: all .5s;
+    }
+
+    .CARD:before {
+      position: absolute;
+      top: 0;
+      left: -105%;
+      z-index: 2;
+      display: block;
+      content: '';
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+      transform: skewX(-35deg);
+      transition: all .5s;
+    }
+
+    .CARD:hover {
+      box-shadow: 0 -5px 8px rgb(104, 104, 104), 0px 5px 10px rgb(70, 70, 70);
+      border: 1px solid #efefef;
+    }
+
+    .CARD:hover h2 {
+      font-size: 2.5em;
+      transition: all .5s;
+      color: #333;
+    }
+
+    .CARDWRAP:hover .CARD:before {
+      left: 120%;
+      transition: all .5s;
+    }
+
+    .TXTINFO {
+      padding: 15px;
+    }
+
+
+    @keyframes rollCARD {
+
+      /* 0% {
+        left: -1800px;
+        opacity: 0.5;
+      }
+
+      5% {
+        opacity: 1;
+      }
+
+      95% {
+        opacity: 1;
+      }
+
+      100% {
+        left: 1800px;
+        opacity: 0;
+      } */
+      0% {
+        transform: translate(0, 0);
+        opacity: 0.5;
+      }
+
+      5% {
+        opacity: 1;
+      }
+
+      95% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(-100%, 0);
+        opacity: 0.5;
+
+      }
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CARD</h1>
+
+
+  <div class="ROLLBOX">
+    <h2 class="CARDTITLE">卡片跑馬燈</h2>
+
+    <div class="ROLL">
+      <div class="CARDWRAP">
+        <div class="CARD">
+          <h2>lorem</h2>
+          <img src='https://picsum.photos/400/450?random=1' width='100%'>
+          <div class="TXTINFO">
+            <ul>
+              <li>貼布步驟事實山。</li>
+              <li>廣大施。</li>
+              <li>簡單收入出去百萬也。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="CARDWRAP">
+        <div class="CARD">
+          <h2>lorem</h2>
+          <img src='https://picsum.photos/400/450?random=4' width='100%'>
+          <div class="TXTINFO">
+            <ul>
+              <li>貼布步驟事實山。</li>
+              <li>烏日不太鏡頭收到。</li>
+              <li>簡單收入出去百萬也。</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="CARDWRAP">
+        <div class="CARD">
+          <h2>lorem</h2>
+          <img src='https://picsum.photos/400/450?random=7' width='100%'>
+          <div class="TXTINFO">
+            <ul>
+              <li>貼布步驟事實山。</li>
+              <li>而是前面首先，連結容量，秘。</li>
+              <li>簡單收入出去百萬也。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="CARDWRAP">
+        <div class="CARD">
+          <h2>lorem</h2>
+          <img src='https://picsum.photos/400/450?random=5' width='100%'>
+          <div class="TXTINFO">
+            <ul>
+              <li>貼布步驟事實山。</li>
+              <li>廣大施。</li>
+              <li>簡單收入出去百萬也。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="CARDWRAP">
+        <div class="CARD">
+          <h2>lorem</h2>
+          <img src='https://picsum.photos/400/450?random=6' width='100%'>
+          <div class="TXTINFO">
+            <ul>
+              <li>貼布步驟事實山。</li>
+              <li>全國一定會，考試國家空。</li>
+              <li>給我科技有限公司每。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="CARDWRAP">
+        <div class="CARD">
+          <h2>lorem</h2>
+          <img src='https://picsum.photos/400/450?random=3' width='100%'>
+          <div class="TXTINFO">
+            <ul>
+              <li>陽明山。</li>
+              <li>法國調查。</li>
+              <li>它是後悔然而接。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+  <script>
+    TweenMax.to('.ROLL', 25, {
+      x: 1600,
+      duration: 1,
+      repeat: -1
+    });
+  </script> -->
+
+
+</body>
+
+</html>
+</body>
+
+</html>

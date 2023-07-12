@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Title Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--[if lt IE 9]>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+     <![endif]-->
+  <style>
+    .ROLLBOX {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      width: 100%;
+      height: 700px;
+      margin: auto;
+      border: 1px solid #CCC;
+      background: url('https://picsum.photos/1920/500?random=1');
+      padding-top: 6%;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .ROLLBOX:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      left: 0;
+      top: 0;
+    }
+
+    .CARDTITLE {
+      position: absolute;
+      color: #FFF;
+      font-size: 120px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+
+    .ROLL {
+      display: flex;
+      /* width: 2400px; */
+      position: absolute;
+      left: 0;
+      animation: rollCARD 35s linear infinite;
+      animation-direction: alternate;
+      /*反向跑的方向設定 */
+      opacity: 1;
+      padding-left: 100%;
+
+    }
+
+    /* 
+    常用的 animation-direction 屬性值：
+    normal（預設值、正向播放）
+    reverse（逆向播放）
+    alternate （一次正向、一次逆向播放，如果播放次數設定為偶數，最後一次會是逆向播放，如果播放次數設定為奇數，最後一次會是正向播放）
+    alternate-reverse（和 alternate 相反，先逆向，在正向播放） 
+    */
+
+    .ROLL:hover {
+      /* animation-play-state:動畫播放或暫停（預設running） */
+      animation-play-state: paused;
+    }
+
+    .CARDWRAP {
+      display: flex;
+      width: 300px;
+      margin: 15px;
+    }
+
+
+    .CARD {
+      width: 300px;
+      height: 450px;
+      background: #e1e1e1;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      transition: all .5s;
+    }
+
+    .CARD h2 {
+      position: absolute;
+      color: #e1e1e1;
+      padding: 15px;
+      transition: all .5s;
+    }
+
+    .CARD:before {
+      position: absolute;
+      top: 0;
+      left: -105%;
+      z-index: 2;
+      display: block;
+      content: '';
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+      transform: translate(50px, 50px) skewX(-35deg);
+
+      transition: all .5s;
+    }
+
+    .CARD:hover {
+      box-shadow: 0 -5px 8px rgb(104, 104, 104), 0px 5px 10px rgb(70, 70, 70);
+      border: 1px solid #efefef;
+      transform: translate(50px, 50px) rotate(10deg) scale(1.1);
+      transform-origin: center top;
+
+    }
+
+    .CARD:hover h2 {
+      font-size: 2.5em;
+      transition: all .5s;
+      color: #333;
+    }
+
+    .CARDWRAP:hover .CARD:before {
+      left: 120%;
+      transition: all .5s;
+    }
+
+    .TXTINFO {
+      padding: 15px;
+    }
+
+
+    @keyframes rollCARD {
+
+      /* 0% {
+        left: -1800px;
+        opacity: 0.5;
+      }
+
+      5% {
+        opacity: 1;
+      }
+
+      95% {
+        opacity: 1;
+      }
+
+      100% {
+        left: 1800px;
+        opacity: 0;
+      } */
+      0% {
+        transform: translate(0, 0);
+        opacity: 0.5;
+      }
+
+      5% {
+        opacity: 1;
+      }
+
+      95% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(-100%, 0);
+        opacity: 0.5;
+
+      }
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CARD</h1>
+  <img src='https://picsum.photos/1900/600?random=1' width='100%'>
+
+  <div class="ROLLBOX">
+    <h2 class="CARDTITLE">卡片跑馬燈</h2>
+
+    <div class="ROLL">
+      <div class="CARDWRAP">
+        <div class="CARD">
+          <h2>lorem</h2>
+          <img src='https://picsum.photos/400/450?random=1' width='100%'>
+          <div class="TXTINFO">
+            <ul>
+              <li>貼布步驟事實山。</li>
+              <li>廣大施。</li>
+              <li>簡單收入出去百萬也。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="CARDWRAP">
+        <div class="CARD">
+          <h2>lorem</h2>
+          <img src='https://picsum.photos/400/450?random=4' width='100%'>
+          <div class="TXTINFO">
+            <ul>
+              <li>貼布步驟事實山。</li>
+              <li>烏日不太鏡頭收到。</li>
+              <li>簡單收入出去百萬也。</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="CARDWRAP">
+        <div class="CARD">
+          <h2>lorem</h2>
+          <img src='https://picsum.photos/400/450?random=7' width='100%'>
+          <div class="TXTINFO">
+            <ul>
+              <li>貼布步驟事實山。</li>
+              <li>而是前面首先，連結容量，秘。</li>
+              <li>簡單收入出去百萬也。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="CARDWRAP">
+        <div class="CARD">
+          <h2>lorem</h2>
+          <img src='https://picsum.photos/400/450?random=5' width='100%'>
+          <div class="TXTINFO">
+            <ul>
+              <li>貼布步驟事實山。</li>
+              <li>廣大施。</li>
+              <li>簡單收入出去百萬也。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="CARDWRAP">
+        <div class="CARD">
+          <h2>lorem</h2>
+          <img src='https://picsum.photos/400/450?random=6' width='100%'>
+          <div class="TXTINFO">
+            <ul>
+              <li>貼布步驟事實山。</li>
+              <li>全國一定會，考試國家空。</li>
+              <li>給我科技有限公司每。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="CARDWRAP">
+        <div class="CARD">
+          <h2>lorem</h2>
+          <img src='https://picsum.photos/400/450?random=3' width='100%'>
+          <div class="TXTINFO">
+            <ul>
+              <li>陽明山。</li>
+              <li>法國調查。</li>
+              <li>它是後悔然而接。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div>
+    m voluptate provident velit dolorum eligendi vitae! Repellat nemo ab sequi eum,
+    fugiat numquam possimus beatae ipsum cum praesentium, voluptates assumenda consectetur, excepturi laboriosam! Ex
+    voluptates sint ducimus dolorem, nostrum autem fugiat amet ad esse minus perferendis. Rerum dolore voluptatem at
+    quos reiciendis deserunt atque numquam? Quasi cumque voluptas velit quisquam amet cum odio, reiciendis non soluta
+    harum veniam a magni natus vero, eius quos obcaecati nulla reprehenderit exercitationem voluptatem commodi, mollitia
+    numquam ex. Nobis consequuntur neque cumque, exercitationem amet atque eveniet voluptas quam et similique veritatis
+    corporis id voluptatem excepturi blanditiis rerum nam at. Maxime assumenda facilis ut aliquid natus impedit, rem
+    sint, incidunt cupiditate, officiis voluptatibus! A nisi qui eum odit. Laboriosam ipsum est perspiciatis eius et
+    recusandae reiciendis enim corporis, eaque ducimus in laborum optio ullam rerum tenetur, dolorum doloremque minima
+    delectus ipsam! Aspernatur aut repellendus qui facere tempore natus sed error maiores, provident reprehenderit neque
+    accusamus voluptatem impedit laborum in distinctio soluta repudiandae. Labore minima commodi deleniti rerum itaque?
+    Odit voluptatum minus officiis. Tempore mollitia facilis omnis minima a labore sit aliquam, nobis provident debitis,
+    impedit perferendis fugit cum sequi quasi tempora fugiat illo ipsa ea! Explicabo, quaerat? Error harum dolorum neque
+    rerum. Perferendis, officia porro. Nobis amet non quod dignissimos, ab repellat tempora sint omnis vitae a corporis
+    iusto quasi similique dicta odit obcaecati unde, possimus modi beatae fugit, recusandae ad harum. Rerum error
+    possimus dolor minima enim vero sapiente. Ducimus reiciendis tenetur repellendus facere nisi minus, corporis
+    architecto corrupti dicta fugiat, dolorem aspernatur voluptatum aperiam repudiandae voluptas illo dolorum quibusdam,
+    pariatur quia facilis quae mollitia cupiditate! Voluptates temporibus ullam placeat dolores enim sint excepturi ipsa
+    facere praesentium, nobis minus quod totam minima distinctio consequuntur delectus officia sed doloremque iusto
+    atque reiciendis nulla ipsam. Quos, culpa rem sapiente temporibus deleniti iusto ducimus facilis impedit tempore
+    quam fugit quod obcaecati! Recusandae consequuntur minus ab molestiae vel a nisi modi illo accusamus earum
+    aspernatur error pariatur, veritatis temporibus quidem ipsam expedita aperiam placeat velit neque labore dolore
+    omnis explicabo! Nihil veritatis nostrum architecto. Odit odio, hic dolores laborum temporibus voluptatibus quos
+    amet cupiditate iste quae dolorum accusantium optio praesentium? A quibusdam laboriosam modi molestiae impedit
+    explicabo fugit, omnis commodi totam ex! Vel minima obcaecati rem omnis tenetur, ipsum quidem quam ad in distinctio
+    doloremque aperiam id quos recusandae delectus magni dignissimos corrupti unde soluta ab iure aliquam qui nam. Nisi
+    quos optio sit veritatis, esse doloremque omnis repellendus ipsa temporibus asperiores obcaecati voluptatem placeat
+    adipisci labore ducimus veniam, quam molestiae unde. Assumenda deserunt fuga iusto laudantium hic a dignissimos
+    atque cum laborum quas totam cumque ad reprehenderit ipsum ducimus distinctio corrupti non delectus, provident, nam
+    porro, autem omnis. Illo asperiores in assumenda, error eaque ipsa laborum debitis quam minus ipsum? Deserunt eum
+    incidunt numquam sapiente? Cum saepe impedit illum dolorum doloremque deleniti hic neque, aliquid minima maxime
+    rerum, magnam beatae laborum ducimus nesciunt odio reiciendis autem non minus tempora quas accusamus? Vel
+    consequatur sed molestias adipisci quae ipsum minus, maxime totam unde neque reprehenderit perspiciatis eveniet
+    earum delectus inventore repellendus iusto repudiandae vero in! Quos sapiente expedita quas error culpa debitis
+    aliquam minima minus delectus aliquid quia iusto odio corrupti in dolores cupiditate ipsa eveniet, voluptates
+    deleniti omnis sed? Facere hic cupiditate soluta sint alias eius ut labore. Repellendus molestiae sint iste
+    doloremque praesentium voluptates veritatis optio nihil a molestias ipsa assumenda quasi rem incidunt tenetur ex in
+    velit saepe, eaque accusantium aut debitis! Quod impedit explicabo, fugit numquam aut iusto sunt excepturi quaerat,
+    autem adipisci facilis totam illo eum tempore est maiores repudiandae deserunt exercitationem cupiditate dolores
+    vitae! Impedit et quaerat expedita perferendis minima, nihil sed id tempora odio adipisci veniam incidunt. Impedit
+    suscipit aliquam deleniti officia obcaecati quas iusto rem similique dolore omnis at quasi soluta voluptatem ullam
+    dolorem, ad unde voluptates. Modi nam eligendi similique tenetur culpa atque molestias exercitationem, odio eveniet
+    expedita debitis ad aliquid odit sint praesentium aut quisquam impedit? Asperiores expedita dolores, veritatis minus
+    sint voluptate perspiciatis blanditiis aliquam consequuntur aliquid et dolorem animi facere architecto iste modi
+    harum quos placeat dolor culpa laborum repudiandae odio! Ducimus nisi excepturi animi fuga voluptatibus. Impedit
+    fuga fugiat perspiciatis accusantium tenetur illum nisi ipsa recusandae reprehenderit adipisci odit tempore beatae,
+    natus voluptas est placeat earum maiores cupiditate nesciunt ab eius ad quam. Itaque esse blanditiis, animi
+    consequatur aut et id vitae suscipit?
+  </div>
+  <img src='https://picsum.photos/1900/900?random=1' width='100%'>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+  <script>
+    TweenMax.to('.ROLL', 25, {
+      x: 1600,
+      duration: 1,
+      repeat: -1
+    });
+  </script> -->
+
+
+</body>
+
+</html>
+</body>
+
+</html>
